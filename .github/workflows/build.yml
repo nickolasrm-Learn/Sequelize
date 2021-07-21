@@ -43,4 +43,4 @@ jobs:
       run: npm ci
 
     - name: Run the tests
-      run: jest --coverage && coveralls < coverage/lcov.info
+      run: npm test -- --coverage && coveralls < coverage/lcov.info
