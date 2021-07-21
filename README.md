@@ -1,4 +1,4 @@
-# TODO
+# Sequelize-1 TODO
 
 ![Build](https://github.com/nickolasrm-Learn/Sequelize-1-TODO/actions/workflows/build.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/nickolasrm-Learn/Sequelize-1-TODO/badge.svg?branch=main)](https://coveralls.io/github/nickolasrm-Learn/Sequelize-1-TODO?branch=main)
