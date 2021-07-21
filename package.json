@@ -1,0 +1,21 @@
+{
+  "name": "sequelize-1-todo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "coverage": "jest --collectCoverage",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-status-codes": "^2.1.4",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.3"
+  }
+}

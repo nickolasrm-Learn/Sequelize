@@ -1,0 +1,9 @@
+// .sequelizerc is a configuration file where you can configure settings for sequelize
+const path = require('path')
+
+module.exports = {
+	// tells sequelize where it should look for a configuration file
+	config: path.join(__dirname, 'config', 'sequelize.js'),
+	//tells sequelize where it should put migrations
+	'migrations-path': path.join(__dirname, 'db', 'migrations')
+}
