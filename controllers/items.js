@@ -33,7 +33,7 @@ module.exports = {
 	 * @param {Int} id the entry id
 	 * @param {Object{description, completed}} args an object containing update data. 
 	 * 	If one of the values if not defined, the current stored value will be maintained
-	 * @returns {Int} 0 if not successful or 1 if successful
+	 * @returns {Int} 0 if not successful or >0 if successful
 	 */
 	update: async (id, args) => {
 		return await item.update(args, 
@@ -44,7 +44,7 @@ module.exports = {
 	 * Deletes an entry from the items table
 	 * i.e. DELETE FROM items WHERE ...
 	 * @param {Int} id the entry id
-	 * @returns {Int} 0 if not successful, or 1 if successful
+	 * @returns {Int} 0 if not successful, or >0 if successful
 	 */
 	delete: async (id) => {
 		return await item.destroy({where: {id}})

@@ -11,8 +11,9 @@ const express = require('express'),
 // Should receive a json containing the description of a new item
 router.post('/api', async (req, res) => {
 	const body = req.body
-	// This verification is necessary in order to avoid wrong or hacking attacks sending
-	// bad requests and, then, shutting down the server through an error exploit
+	// This verification is necessary in order to avoid incomplete requests or 
+	// hacking attacks sending bad requests and, then, shutting down the server
+	// through an error exploit
 	if (validDescription(body)) return res.json(await items.store(body.description))
 	else return answerBadRequest(res)
 })
@@ -30,7 +31,10 @@ router.put('/api', async (req, res) => {
 	id = body.id
 	args ={}
 
+	// Checks if all fields to be updated are valid
 	if(!validId(body)) return answerBadRequest(res)
+	// Not all fields should me modified, you can pass only what fields you want to edit
+	// That is why args is being filled after checking
 	if(!validCompleted(body, true)) return answerBadRequest(res)
 	else args.completed = body.completed
 	if(!validDescription(body, true)) return answerBadRequest(res)

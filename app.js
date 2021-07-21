@@ -14,15 +14,24 @@ app.use(express.urlencoded({extended: true}))
 
 // Checks db connection
 // Will run a command into the db to check if it is working properly
-db.authenticate().then(() => {
-    console.log('Connection has been established successfully.');
-  }).catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+/*db.authenticate().then(() => {
+  console.log('Connection has been established successfully.')
+}).catch(err => {
+  console.error('Unable to connect to the database:', err)
+})*/
 
 // Routes
 app.use(apiRouter)
 
-module.exports = app.listen(port, () => {
+// Creating a request listener
+const listener = app.listen(port, () => {
   console.log(`Listening on ${port}`)
 })
+
+// Close db connection when the app is closed
+process.on('exit', () => {
+  app.close()
+  db.close()
+})
+
+module.exports = {app: listener, db} 
