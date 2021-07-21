@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "coveralls": "^3.1.1",
     "express": "^4.16.4",
     "http-status-codes": "^2.1.4",
     "pg": "^8.6.0",
